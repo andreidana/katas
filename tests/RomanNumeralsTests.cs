@@ -1,8 +1,8 @@
-using katas;
 using NUnit.Framework;
 
 namespace katas.tests
 {
+    [TestFixture]
     public class RomanNumeralsTests
     {
         [SetUp]
