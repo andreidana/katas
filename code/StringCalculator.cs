@@ -48,12 +48,21 @@ namespace katas
 {
     public class StringCalculator
     {
-        public object Add(string input)
+        private char[] separators = {',', '\n'};
+        public int Add(string input)
         {
             if (input.Length == 0)
                 return 0;
+
+            var inputArr = input.Split(separators);
+            var sum = 0;
+
+            foreach (var inp in inputArr)
+            {
+                sum += Int32.Parse(inp);
+            }
             
-            return Int16.Parse(input);
+            return sum;
         }
     }
 }
