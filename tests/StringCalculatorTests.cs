@@ -52,5 +52,11 @@ namespace katas.tests
             var ex = Assert.Throws<Exception>(() => stringCalculator.Add("1,-1"));
             Assert.That(ex.Message.Equals("Negatives are not allowed"));
         }
+
+        [Test]
+        public void ShouldIgnoreNumbersLargerThanAThousand()
+        {
+            Assert.AreEqual(stringCalculator.Add("1,2,1001,999,1002"), 1002);
+        }
     }
 }

@@ -63,6 +63,9 @@ namespace katas
                 
                 if(parsedNumber < 0)
                     throw new Exception("Negatives are not allowed");
+
+                if(parsedNumber > 1000)
+                    parsedNumber = 0;
                 
                 sum += parsedNumber;
             }
