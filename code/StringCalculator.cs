@@ -59,7 +59,12 @@ namespace katas
 
             foreach (var inp in inputArr)
             {
-                sum += Int32.Parse(inp);
+                var parsedNumber = Int32.Parse(inp);
+                
+                if(parsedNumber < 0)
+                    throw new Exception("Negatives are not allowed");
+                
+                sum += parsedNumber;
             }
             
             return sum;

@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace katas.tests
@@ -43,6 +44,13 @@ namespace katas.tests
         public void ShouldAcceptNewLineAsDelimited()
         {
             Assert.AreEqual(stringCalculator.Add("1\n2,3\n4"), 10);
+        }
+
+        [Test]
+        public void ShouldThrowExceptionWhenNegativeNumbersAreSent()
+        {
+            var ex = Assert.Throws<Exception>(() => stringCalculator.Add("1,-1"));
+            Assert.That(ex.Message.Equals("Negatives are not allowed"));
         }
     }
 }
